@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EBF770;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #3BB7E6;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #A33038; /* Red */
+        }
+        label {
+            display: block;
+            margin: 5px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #ffcc00; /* Yellow */
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #e6b800; /* Darker Yellow */
+        }
+        .problem-select {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Evaluation Form</h1>
+        <form action="submit" method="POST">
+            <label for="gmail">Gmail:</label>
+            <input type="email" id="gmail" name="gmail" required> <!-pattern="[a-zA-Z0-9._%+-]+@universityofbohol\.edu\.ph" title="Please enter a valid email address ending with @universityofbohol.edu.ph"> 
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="1" max="120">
+
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+
+            <label for="problem">What is your problem?</label>
+            <select id="problem" name="problem" class="problem-select" required>
+                <option value="">Select a problem</option>
+                <option value="Academic">Academic</option>
+                <option value="Financial">Financial</option>
+                <option value="Personal">Personal</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="specificReason">Please specify:</label>
+            <textarea id="specificReason" name="specificReason" rows="4" placeholder="Provide specific details here..."></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
